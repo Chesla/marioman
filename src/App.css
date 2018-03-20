@@ -1,0 +1,103 @@
+.gameCnt{
+    max-height: 95vh;
+    max-width: 1200px;
+    min-height: 90vh;
+    min-width: 1200px;
+    margin:10px auto;
+    overflow:auto;
+    justify-content: center;
+    background: lightyellow;
+    align-items: center;
+}
+.gameCnt.over{
+  background: url('./gameOver.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.main-cnt{
+  display: flex;
+}
+.blockCnt {
+    display: flex;
+    padding: 8px;
+    min-height: 40px;
+    min-width: 40px;
+    justify-content: center;
+    align-items: center;
+}
+/*.gameBoard{
+  display: flex;
+  justify-content: center;
+}*/
+.grid-cnt{
+  padding: 50px;
+  border: 1px solid black;
+}
+.labelStyle{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.36;
+  color: #16325c;
+  padding-right: 10px;
+  font-family: sans-serif;
+}
+.labelCnt{
+  padding: 10px;
+}
+.labelCnt.over{
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.labelStyle.start{
+  padding-right: 30px;
+}
+.inputStyle{
+    border-radius: 3px;
+    background-color: #f9fafc;
+    border: solid 1px #e8edf4;
+    padding: 5px;
+    font-size: 14px;
+    color: #16325c;
+    font-family: sans-serif;
+}
+.inputStyle.over{
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+}
+.entryCnt{
+    border:1px solid black;
+    padding: 10px;
+    margin:10px auto;
+    width: 330px;
+    margin: 15% auto;
+}
+.buttonStyle{
+    font-family: sans-serif;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    color: white;
+    background-color: #5e89c6;
+    margin: 0px 90px;
+}
+.entryButtonCnt{
+    display: flex;
+    justify-content: center;
+    margin: 25% auto;
+}
+.blck-cnt{
+  width: fit-content;
+  margin:0px auto;
+  border:1px solid black;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
