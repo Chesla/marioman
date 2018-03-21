@@ -3,6 +3,9 @@ import dispatcher from "../dispatchers/dispatcher";
 class MarioStores extends EventEmitter{
 	constructor(){
 		super();
+		this.initData();
+	}
+	initData(){
 		this.food=[];
 		this.marioPos={
 			x:0,
@@ -14,11 +17,9 @@ class MarioStores extends EventEmitter{
 		this.start = false;
 		this.moves = 0;
 	}
-	
 	generateRandomFoodPositions(numberOfRow,numberOfCol){
 		numberOfRow = parseInt(numberOfRow);
         numberOfCol = parseInt(numberOfCol);
-        let rowLimit=[],collLimit=[];
         let cellLimit = (numberOfCol+numberOfRow)/2;
         cellLimit = parseInt(cellLimit);
         
@@ -44,7 +45,7 @@ class MarioStores extends EventEmitter{
 		return this[type];
 	}
 	updateMarioCord(dir,update){
-		if(this.food.length==0){
+		if(this.food.length===0){
 			this.emit('change','GAME_OVER');
 			return false;
 		}
@@ -89,11 +90,16 @@ class MarioStores extends EventEmitter{
 		this.emit('change','MARIO_POS')
 	}
 	_handleActions(action){
-		
+		switch(action.type){
+			case 'MARIO_ACTION':{
+				this.updateMarioCord(action.direction);
+				break;
+			}
+		}
 	}
 }
 
-const marioStores = new MarioStores;
+const marioStores = new MarioStores();
 marioStores.setMaxListeners(Infinity);
 dispatcher.register(marioStores._handleActions.bind(marioStores));
 export default marioStores;
